@@ -1,0 +1,109 @@
+@import '$lib/css/reset.scss';
+
+:root {
+  /*
+    Light colours
+  */
+  --light-text: #222;
+  --light-bkg: #fff;
+  --light-intro-bkg: #eee;
+  --light-logo: var(--light-text);
+
+  --light-blue: #345271;
+  --light-violet: #785878;
+  --light-teal: #477e73;
+  --light-brown: #846352;
+  --light-yellow: #858249;
+
+  /*
+    Dark colours
+  */
+  --dark-text: #eee;
+  --dark-bkg: #151515;
+  --dark-intro-bkg: #111;
+  --dark-logo: var(--dark-text);
+
+  --dark-blue: #007bff;
+  --dark-violet: #ff46ff;
+  --dark-teal: #33ffd3;
+  --dark-brown: #ff7c36;
+  --dark-yellow: #fff42b;
+}
+
+body,
+body.light {
+  --col-text: var(--light-text);
+  --col-bkg: var(--light-bkg);
+  --col-intro-bkg: var(--light-intro-bkg);
+  --col-logo: var(--light-logo);
+
+  --col-blue: var(--light-blue);
+  --col-violet: var(--light-violet);
+  --col-teal: var(--light-teal);
+  --col-brown: var(--light-brown);
+  --col-yellow: var(--light-yellow);
+
+  background-color: var(--col-bkg);
+  color: var(--col-text);
+}
+
+/* Dark theme colors */
+body.dark {
+  --col-text: var(--dark-text);
+  --col-bkg: var(--dark-bkg);
+  --col-intro-bkg: var(--dark-intro-bkg);
+  --col-logo: var(--dark-logo);
+
+  --col-blue: var(--dark-blue);
+  --col-violet: var(--dark-violet);
+  --col-teal: var(--dark-teal);
+  --col-brown: var(--dark-brown);
+  --col-yellow: var(--dark-yellow);
+}
+
+/* Styles for users who prefer dark mode at the OS level */
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  body {
+    --col-text: var(--dark-text);
+    --col-bkg: var(--dark-bkg);
+    --col-intro-bkg: var(--dark-intro-bkg);
+    --col-logo: var(--dark-logo);
+
+    --col-blue: var(--dark-blue);
+    --col-violet: var(--dark-violet);
+    --col-teal: var(--dark-teal);
+    --col-brown: var(--dark-brown);
+    --col-yellow: var(--dark-yellow);
+
+    background-color: var(--col-bkg);
+    color: var(--col-text);
+  }
+}
+
+a,
+a:active,
+a:visited {
+  color: var(--col-blue);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body.loadedv {
+  transition: color 500ms linear, background-color 500ms linear;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  // display: grid;
+  // grid-template-rows: 80px 1fr auto;
+  // height: 100%;
+  display: flex;
+  flex-direction: column;
+}
