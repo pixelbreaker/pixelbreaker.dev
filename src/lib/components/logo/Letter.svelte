@@ -1,7 +1,6 @@
 <script>
   export let letter = 'a';
   export let color = '--col-logo';
-  export let color2 = '--col-logo';
   export let classname = '';
 
   const letters = {

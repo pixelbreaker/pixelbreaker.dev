@@ -1,6 +1,6 @@
 <script>
-  import MdBrightness4 from 'svelte-icons/md/MdBrightness4.svelte';
-  import MdBrightness5 from 'svelte-icons/md/MdBrightness5.svelte';
+  import DarkMode from 'svelte-icons/io/IoIosMoon.svelte';
+  import LightMode from 'svelte-icons/io/IoIosSunny.svelte';
   let body;
 
   const setTheme = (theme) => {
@@ -22,9 +22,9 @@
 </script>
 
 <!-- svelte-ignore a11y-invalid-attribute -->
-<button on:click={() => setTheme('dark')} class="ThemeSwitch dark"><MdBrightness4 /></button>
+<button on:click={() => setTheme('dark')} class="ThemeSwitch dark"><DarkMode /></button>
 <!-- svelte-ignore a11y-invalid-attribute -->
-<button on:click={() => setTheme('light')} class="ThemeSwitch light"><MdBrightness5 /></button>
+<button on:click={() => setTheme('light')} class="ThemeSwitch light"><LightMode /></button>
 
 <style lang="scss">
   .ThemeSwitch {

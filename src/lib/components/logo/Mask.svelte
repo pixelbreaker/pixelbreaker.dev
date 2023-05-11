@@ -26,11 +26,11 @@
     width: 100vw;
 
     &.animate.top {
-      animation: 400ms ease-in 2s maskOutTop;
+      animation: 350ms cubic-bezier(0.14, 0.04, 0, 1) 1800ms maskOutTop;
     }
 
     &.animate.bottom {
-      animation: 400ms ease-in 2s maskOutBottom;
+      animation: 350ms cubic-bezier(0.14, 0.04, 0, 1) 1800ms maskOutBottom;
     }
 
     &.top {
@@ -45,9 +45,9 @@
   .Line {
     animation-fill-mode: both !important;
     animation-iteration-count: 1;
-    animation: 250ms ease-out 1100ms linesIn;
+    animation: 250ms ease-in 1000ms linesIn;
     backface-visibility: hidden;
-    background-color: var(--col-violet);
+    background-color: var(--col-edge);
     height: 2px;
     left: 0;
     position: absolute;
@@ -65,11 +65,18 @@
 
   @keyframes maskOutTop {
     from {
+      background-color: var(--col-intro-bkg);
       transform: translateY(0);
     }
 
+    90% {
+      background-color: var(--col-intro-bkg);
+    }
+
     to {
-      transform: translateY(-55vh);
+      background-color: transparent;
+      /* Offset accounts for height of header nav */
+      transform: translateY(calc(-50vh + var(--header-height) - 2px));
     }
   }
 

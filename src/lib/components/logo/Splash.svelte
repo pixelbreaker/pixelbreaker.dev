@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { uniqueRandomThemeColors } from '$lib/utils';
   import Letter from './Letter.svelte';
   import Mask from './Mask.svelte';
 
@@ -14,13 +15,7 @@
 
   let maskTop, maskBottom;
 
-  const colors = ['--col-blue', '--col-violet', '--col-teal', '--col-brown', '--col-yellow'];
-  const picked = [].concat(
-    colors.splice(~~(Math.random() * colors.length - 1), 1),
-    colors.splice(~~(Math.random() * colors.length - 1), 1),
-    colors.splice(~~(Math.random() * colors.length - 1), 1),
-    colors.splice(~~(Math.random() * colors.length - 1), 1)
-  );
+  const picked = uniqueRandomThemeColors(4);
 
   const words = [
     [
@@ -70,12 +65,12 @@
         <div class="AnimationWord">
           {#each word as letter, j}
             <Letter
-              letter={letter.char}
               --anim-in-delay="{130 + i * 500 + (i === 1 ? words[i].length - j : j) * 120}ms"
               --anim-out-delay={letter.delay}
               --anim-out-duration={letter.duration}
-              color={picked[animState === 'in' ? i : i + 2]}
               classname="{animState}-{i === 0 ? 'top' : 'bottom'}"
+              color={picked[animState === 'in' ? i : i + 2]}
+              letter={letter.char}
             />
           {/each}
         </div>
@@ -94,6 +89,7 @@
     overflow: hidden;
     position: absolute;
     width: 100vw;
+    z-index: 10;
   }
 
   .AnimationContainer {
