@@ -13,7 +13,7 @@
   --light-bkg: #ededed;
   --light-intro-bkg: #efefef;
   --light-header-bkg: #efefef;
-  --light-logo: var(--light-text);
+  --light-logo: #444;
 
   --light-blue: #294d70;
   --light-violet: #7e467e;
@@ -29,7 +29,7 @@
   --dark-bkg: #151515;
   --dark-intro-bkg: #222;
   --dark-header-bkg: #222;
-  --dark-logo: var(--dark-text);
+  --dark-logo: #aaa;
 
   --dark-blue: #007bff;
   --dark-violet: #ff46ff;
@@ -126,4 +126,8 @@ body {
   // height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.Container {
+  width: 100%;
 }
