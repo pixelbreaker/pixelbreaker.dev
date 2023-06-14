@@ -169,6 +169,10 @@
       animation-timing-function: ease-in;
       transition: color var(--anim-out-duration) ease-out var(--anim-out-delay);
     }
+
+    &.no-transition {
+      transition: none;
+    }
   }
 
   .letterPath {

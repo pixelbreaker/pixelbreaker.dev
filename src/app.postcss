@@ -1,0 +1,125 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* 
+    Sizes 
+    */
+    --header-height: 60px;
+    --edge-width: 1px;
+
+    /*
+    Light colours
+    */
+    --light-text: #222;
+    --light-bkg: #eee;
+
+    --light-primary: #27ae60;
+    --light-secondary: #2980b9;
+    --light-third: #8e44ad;
+    --light-forth: #f39c12;
+    --light-fifth: #c0392b;
+
+    /*
+    Dark colours
+    */
+    --dark-text: #eee;
+    --dark-bkg: #18181b;
+
+    --dark-primary: #2ecc71;
+    --dark-secondary: #3498db;
+    --dark-third: #9b59b6;
+    --dark-forth: #f1c40f;
+    --dark-fifth: #e74c3c;
+
+    /*
+    Common colours
+    */
+  }
+
+  html,
+  html.light {
+    --col-text: var(--light-text);
+    --col-bkg: var(--light-bkg);
+
+    --col-primary: var(--light-primary);
+    --col-secondary: var(--light-secondary);
+    --col-third: var(--light-third);
+    --col-forth: var(--light-forth);
+    --col-fifth: var(--light-fifth);
+
+    --col-edge: var(--col-secondary);
+    --col-header-bkg: (var(--light-bkg));
+    --col-logo: #111;
+    --col-intro-bkg: var(--light-bkg);
+
+    background-color: var(--col-bkg);
+    color: var(--col-text);
+  }
+}
+
+/* Dark theme colors */
+html.dark {
+  --col-text: var(--dark-text);
+  --col-bkg: var(--dark-bkg);
+
+  --col-primary: var(--dark-primary);
+  --col-secondary: var(--dark-secondary);
+  --col-third: var(--dark-third);
+  --col-forth: var(--dark-forth);
+  --col-fifth: var(--dark-fifth);
+
+  --col-edge: var(--col-secondary);
+  --col-header-bkg: #09090b;
+  --col-logo: #ddd;
+  --col-intro-bkg: #09090b;
+}
+
+/* Styles for users who prefer dark mode at the OS level */
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  html {
+    --col-text: var(--dark-text);
+    --col-bkg: var(--dark-bkg);
+
+    --col-primary: var(--dark-primary);
+    --col-secondary: var(--dark-secondary);
+    --col-third: var(--dark-third);
+    --col-forth: var(--dark-forth);
+    --col-fifth: var(--dark-fifth);
+
+    background-color: var(--col-bkg);
+    color: var(--col-text);
+  }
+}
+
+a,
+a:active,
+a:visited {
+  color: var(--col-primary);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html.loaded {
+  /* transition: color 500ms linear, background-color 500ms linear; */
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.Container {
+  width: 100%;
+}

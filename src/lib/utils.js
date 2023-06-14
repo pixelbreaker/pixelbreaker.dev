@@ -1,10 +1,9 @@
 export const themeColors = () => [
-  '--col-blue',
-  '--col-violet',
-  '--col-teal',
-  '--col-brown',
-  '--col-yellow',
-  '--col-green'
+  '--col-primary',
+  '--col-secondary',
+  '--col-third',
+  '--col-forth',
+  '--col-fifth'
 ];
 
 export const uniqueRandomThemeColors = (count) => {

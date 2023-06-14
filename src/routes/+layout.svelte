@@ -1,5 +1,6 @@
 <script>
-  import '../app.scss';
+  import '$lib/css/fonts.postcss';
+  import '../app.postcss';
   import Splash from '$lib/components/logo/Splash.svelte';
   import Header from '$lib/components/Header.svelte';
   import Footer from '$lib/components/Footer.svelte';
@@ -9,10 +10,10 @@
     const theme = window.localStorage.getItem('theme');
 
     if (theme) {
-      document.body.classList.add(theme);
+      document.documentElement.classList.add(theme);
     }
     setTimeout(() => {
-      document.body.classList.add('loaded');
+      document.documentElement.classList.add('loaded');
     }, 10);
   });
 </script>
@@ -24,7 +25,7 @@
 </div>
 <Footer />
 
-<style lang="scss">
+<style>
   .Contents {
     flex: 2 0 auto;
   }

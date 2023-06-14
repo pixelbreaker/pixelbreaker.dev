@@ -26,7 +26,7 @@
     width: 100vw;
 
     &.animate.top {
-      animation: 350ms cubic-bezier(0.14, 0.04, 0, 1) 1800ms maskOutTop;
+      animation: 400ms cubic-bezier(0.14, 0.04, 0, 1) 1800ms maskOutTop;
     }
 
     &.animate.bottom {
@@ -48,7 +48,7 @@
     animation: 250ms ease-in 1000ms linesIn;
     backface-visibility: hidden;
     background-color: var(--col-edge);
-    height: 2px;
+    height: var(--edge-width);
     left: 0;
     position: absolute;
     transform-origin: top 50%;
@@ -64,19 +64,20 @@
   }
 
   @keyframes maskOutTop {
-    from {
+    0% {
       background-color: var(--col-intro-bkg);
       transform: translateY(0);
     }
 
-    90% {
+    80% {
       background-color: var(--col-intro-bkg);
+      /* Offset accounts for height of header nav */
+      transform: translateY(calc(-50vh + var(--header-height) - var(--edge-width)));
     }
 
-    to {
+    100% {
       background-color: transparent;
-      /* Offset accounts for height of header nav */
-      transform: translateY(calc(-50vh + var(--header-height) - 2px));
+      transform: translateY(calc(-50vh + var(--header-height) - var(--edge-width)));
     }
   }
 

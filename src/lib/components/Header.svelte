@@ -4,9 +4,9 @@
 </script>
 
 <site-header class="SiteHeader">
-  <Container>
+  <Container padded={false}>
     <header>
-      <HeaderLogo />
+      <HeaderLogo classname="max-sm:invisible" />
     </header>
   </Container>
 </site-header>
@@ -15,11 +15,10 @@
   .SiteHeader {
     align-items: center;
     background-color: var(--col-header-bkg);
-    border-bottom: 2px solid var(--col-edge);
+    border-bottom: var(--edge-width) solid var(--col-edge);
     display: flex;
     flex-direction: row;
     flex: 0 0 auto;
     height: var(--header-height);
-    transition: background-color 500ms linear;
   }
 </style>

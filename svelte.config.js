@@ -6,9 +6,11 @@ import { vitePreprocess } from '@sveltejs/kit/vite';
 const config = {
   preprocess: [
     preprocess({
-      scss: {
-        prependData: '@use "src/variables.scss" as *;'
-      }
+      // scss: {
+      //   prependData: '@use "src/variables.scss" as *;'
+      // },z
+
+      postcss: true
     }),
     vitePreprocess()
   ],

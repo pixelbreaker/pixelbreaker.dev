@@ -37,7 +37,13 @@
   ];
 
   onMount(() => {
-    if (window.sessionStorage.getItem('viewedSplash')) {
+    const viewedSplash = window.sessionStorage.getItem('viewedSplash');
+    const viewedExpiry = 28800000; // show splash again after 8 hrs
+
+    if (
+      viewedSplash !== null &&
+      new Date().valueOf() - window.sessionStorage.getItem('viewedSplash') < viewedExpiry
+    ) {
       animState = 'done';
     } else {
       setTimeout(() => {
@@ -47,7 +53,7 @@
         animState = 'out';
         maskTop.animate();
         maskBottom.animate();
-        window.sessionStorage.setItem('viewedSplash', true);
+        window.sessionStorage.setItem('viewedSplash', new Date().valueOf());
       }, 3000);
       setTimeout(() => {
         animState = 'done';
@@ -80,7 +86,7 @@
 {/if}
 
 <style lang="scss">
-  :global(body:not(.loaded)) {
+  :global(html:not(.loaded)) {
     display: none;
   }
 
